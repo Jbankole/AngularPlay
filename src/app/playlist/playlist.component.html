@@ -1,0 +1,22 @@
+<table class = "table table-hover">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Title</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor ="let v of videos" (click)="onSelect(v)">
+        <td><a href = "videos/{{v.videoCode}}">test</a>{{v.id}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.desc}}</td>
+      
+        <div>
+            <iframe width="560" height="315" [src]="getEmbedURL(v)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
+      </tr>
+    </tbody>  
+</table>
+
